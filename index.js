@@ -7,12 +7,13 @@ client.on('ready', () => {
     console.log('Sistema iniciado')
 })
 client.on('guildMemberAdd', async member => {
-    let canal = client.channels.cache.get('')// id do canal da mensagem
+	// A função e acionada quando um membro entra no servidor
+    const canal = client.channels.cache.get('')// id do canal da mensagem
     canal.send(`@${member.user.username}, Entrou no ${config.name}, seja bem-vindo(a)`)
 })
 client.on('guildMemberRemove', async member => {
-	// A função e acionada quando um menbro sai do servidor
-    let canal = client.channels.cache.get('')// id do canal da mensagem
+	// A função e acionada quando um membro sai do servidor
+    const canal = client.channels.cache.get('')// id do canal da mensagem
     canal.send(`@${member.user.username}, Saiu do ${config.name}, adeus`)
 })
 client.on('message', async message => {
